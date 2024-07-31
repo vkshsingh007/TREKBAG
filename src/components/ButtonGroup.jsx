@@ -1,14 +1,16 @@
+import { useItemContext } from "../lib/hooks";
 import Button from "./Button";
 
-const ButtonGroup = ({
-  handelRemoveAllItems,
-  handelResetToInitialItem,
-  handelMarkAllComplete,
-  handelMarkAllIncomplete,
-}) => {
+const ButtonGroup = () => {
+  const {
+    handelMarkAllCompleted,
+    handelMarkAllIncomplete,
+    handelResetToInitialItem,
+    handelRemoveAllItems,
+  } = useItemContext();
   return (
     <section className="button-group">
-      <Button onClick={handelMarkAllComplete} buttonType="secondary">
+      <Button onClick={handelMarkAllCompleted} buttonType="secondary">
         Mark all as complete
       </Button>
       <Button onClick={handelMarkAllIncomplete} buttonType="secondary">
